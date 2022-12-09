@@ -2,6 +2,7 @@ body {
     margin: 0; 
     font-family: 'DM Sans', sans-serif;
     background-color: white;
+    
 } 
  
 a { 
@@ -10,39 +11,44 @@ a {
 
 .header {
     background-color: rgb(19, 28, 56);
-    height: 90px;
-    opacity: 0,7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-list a {
     display: flex;
     align-items: center;
-    padding: 10px;
-    padding-left: 50px;
+    padding: 5px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
 }
 
 nav {
-    flex: 1;
-    text-align: right;
+    float: right;
 }
 
 nav ul {
-    display: inline-block;
-    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 70px;
+    list-style: none;
 }
 
 nav ul li a {
     text-decoration: none;
-    font-size: 20px;
+    height: 60px;
     color: white;
-    text-transform: capitalize;
+    padding: 0 20px;
+    display: block;
+    line-height: 60px;
 }
 
 nav ul li button {
@@ -73,9 +79,10 @@ a {
 
 
 .logopng {
-    width: 70px;
+    height: 60px;
+    line-height: 60px;
     float: left;
-    margin-top: 3px;
+    margin-top: 10px;
 }
  
 .container { 
@@ -151,8 +158,8 @@ a {
 }
 
 .kolom-koran{ 
-    -webkit-column-count: 3;
-    -webkit-column-width: 10;
+    column-count: 3;
+    column-width: 10;
 }
 
 .contact-form{
@@ -197,4 +204,56 @@ input,textarea{
 .footer-list li{
     color: white;
     padding-bottom: 20px;
+}
+
+.menu-toggle{
+    color: white;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*responsive*/
+
+@media (max-width: 600px) {
+    .header {
+        height: 0px;
+        padding: 0 20px;
+
+    }
+
+    .top-wrapper h1{
+        font-size: 30px;
+        letter-spacing: 3px;
+        display: flex;
+    }
+
+    .top-wrapper{
+        background-image: url(bg2.jpg);
+        padding: 600px
+    }
+
+    .menu-toggle{
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+
+
 }
