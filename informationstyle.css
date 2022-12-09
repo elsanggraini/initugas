@@ -2,6 +2,7 @@ body {
     margin: 0; 
     font-family: 'DM Sans', sans-serif;
     background-color: white;
+    padding: 20px 0;
 } 
  
 a { 
@@ -10,39 +11,44 @@ a {
 
 .header {
     background-color: rgb(19, 28, 56);
-    height: 90px;
-    opacity: 0,7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-list a {
     display: flex;
     align-items: center;
-    padding: 10px;
-    padding-left: 50px;
+    padding: 5px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
 }
 
 nav {
-    flex: 1;
-    text-align: right;
+    float: right;
 }
 
 nav ul {
-    display: inline-block;
-    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 70px;
+    list-style: none;
 }
 
 nav ul li a {
     text-decoration: none;
-    font-size: 20px;
+    height: 60px;
     color: white;
-    text-transform: capitalize;
+    padding: 0 20px;
+    display: block;
+    line-height: 60px;
 }
 
 nav ul li button {
@@ -73,15 +79,139 @@ a {
 
 
 .logopng {
-    width: 70px;
+    height: 60px;
+    line-height: 60px;
     float: left;
-    margin-top: 3px;
+    margin-top: 10px;
 }
 
-.heading {
-    font-size: 88px;
-    float: left;
-    font-family: 'Raleway', sans-serif;
-    padding: 20px;
-    font-family: 'DM Serif Display', serif;
+.greeting {
+    font-size: 20px;
+    margin-top: 100px;
+    max-width: 1240px;
+    margin-left: 10px;
+    font-family:'Alexandria', sans-serif;
+    color: #263159;
+}
+
+.container{
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+@media (min-width: 30cm) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 60cm) {
+    .container {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+.card {
+    background: rgb(221, 220, 220);
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    position: relative;
+    top: 0;
+    transition: all 0.1s ease-in;
+}
+
+.card:hover {
+    top: -2;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card .thumb {
+    padding-bottom: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card article {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h1 {
+    margin: 0;
+    color: #333;
+}
+
+.card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05cm;
+    margin: 2cm 0 0 0;
+}
+
+.card p {
+    flex: 1;
+    line-height: 1.4;
+    color: #333;
+}
+
+@media (min-width: 60cm) {
+    .artikel-1 {
+        grid-column: 1/span 2;
+    }
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+.page ul {
+    position: relative;
+    background: #e0e0e0;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 34%);
+}
+
+.page ul li {
+    list-style: none;
+    line-height: 50px;
+    margin: 0 10px;
+}
+
+.page ul li .numberpage {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.page ul li a {
+    display: block;
+    text-decoration: #333;
+    color: #333;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.page ul li .numberpage:hover a
+.page ul li .numberpage.active a {
+    background: rgb(19, 28, 56);
+    color: white;
 }
